@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper "HDT: Hierarchical Document Transformer" is accepted to [COLM 2024](https://colmweb.org/index.html)
+Our paper "HDT: Hierarchical Document Transformer" is accepted to [COLM 2024](https://colmweb.org/index.html)!
