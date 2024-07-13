@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>HDT: Hierarchical Document Transformer</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -43,6 +43,20 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js" integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  <style>
+        .table_img { display: flex; }
+        .table_img img { max-width: 40%; margin-right: 20px; }
+        .table_img table { border-collapse: collapse; }
+        .table_img th, .specific-container td { border: 1px solid black; padding: 8px; }
+    </style>
 </head>
 <body>
 
@@ -52,50 +66,46 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">HDT: Hierarchical Document Transformer</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://cli212.github.io/" target="_blank">Haoyu He</a><sup>1,2*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://markus.flicke.eu/" target="_blank">Markus Flicke</a><sup>1,2*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
+                    <a href="https://www.informatik.tu-darmstadt.de/ukp/ukp_home/staff_ukp/ukp_home_content_staff_1_details_88384.en.jsp" target="_blank">Jan Buchmann<sup>3</sup></a>
+                  ,</span>
+                  <span class="author-block">
+                        <a href="https://www.informatik.tu-darmstadt.de/ukp/ukp_home/head_ukp/index.en.jsp" target="_blank">Iryna Gurevych<sup>3</sup></a>
+                      ,</span>
+              <span class="author-block">
+                        <a href="https://www.cvlibs.net/" target="_blank">Andreas Geiger<sup>1,2</sup></a>
+                      ,</span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="author-block"><sup>1</sup>University of Tübingen, <sup>2</sup>Tübingen AI Center<br>
+                      <sup>3</sup>Technical University of Darmstadt and Hessian Center for AI (hessian.AI)<br>CONFERENCE ON LANGUAGE MODELING' 2024</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
+
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://www.scholar-inbox.com/papers/He2024ARXIV_HDT_Hierarchical_Document_Transformer.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
+                          <img class="icon-img data-img-icon" src="https://www.scholar-inbox.com/image/scholar_inbox_nobackground.png"/>
                         </span>
-                        <span>Paper</span>
+                        <span>Scholar Inbox</span>
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/autonomousvision/hdt" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -103,10 +113,9 @@
                     <span>Code</span>
                   </a>
                 </span>
-
-                <!-- ArXiv abstract Link -->
+                      <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2407.08330" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -127,14 +136,15 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+        <!-- Your image here -->
+        <img src="static/images/head_img.png" alt="First Image">
+
+      <h4 class="subtitle has-text-centered">
+        (<em>Left</em>) We propose a sparse attention pattern that considers the hierarchical structure of documents. Here, regular tokens are illustrated in green, and auxiliary anchor tokens in yellow (document),
+red (section) and blue (sentence). Each token attends to its parent, siblings and children. Cross-level
+attention is illustrated using color gradients in the attention matrix. <br> (<em>Right</em>) Utilizing structural information
+present in documents leads to faster pre-training.
+      </h4>
     </div>
   </div>
 </section>
@@ -148,7 +158,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            In this paper, we propose the Hierarchical Document Transformer (HDT), a novel sparse Transformer architecture tailored for structured hierarchical documents. Such documents are extremely important in numerous domains, including science, law or medicine. However, most existing solutions are inefficient and fail to make use of the structure inherent to documents. HDT exploits document structure by introducing auxiliary anchor tokens and redesigning the attention mechanism into a sparse multi-level hierarchy. This approach facilitates information exchange between tokens at different levels while maintaining sparsity, thereby enhancing computational and memory efficiency while exploiting the document structure as an inductive bias. We address the technical challenge of implementing HDT's sample-dependent hierarchical attention pattern by developing a novel sparse attention kernel that considers the hierarchical structure of documents. As demonstrated by our experiments, utilizing structural information present in documents leads to faster convergence, higher sample efficiency and better performance on downstream tasks.
           </p>
         </div>
       </div>
@@ -158,127 +168,85 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
+<section class="section", id="method">
+  <div class="container is-max-desktop">
+    <div class="content is-medium">
+        <h2 class="title">Efficient Transformer Leverages Document Structures</h2>
+          <p>
+            Most documents are organized into structural constituents like sections, paragraphs, sentences, bulleted lists, figures, and footnotes. This structure is represented in the visual layout and conveys the author's semantic organization of the text. We exploit this document structure by (1) introducing auxiliary anchor tokens to represent each element in the hierarchy, and (2) developing an efficient sparse attention kernel that exchanges information only between tokens at the same level (siblings) as well as between the respective parent and child tokens. By stacking multiple HDT blocks, information from any token can reach any other token. At the same time, the attention pattern of HDT blocks is highly sparse, leading to gains in computational (and memory) efficiency.
+More specifically, for the document hierarchy introduced above, we prepend additional [SENT] anchor tokens to the beginning of every sentence, [SEC] anchor tokens to the start of each section, and a [DOC] anchor token to the beginning of the document as illustrated in the following figure:
+          </p>
+      <img src="static/images/hierarchical_tree.png"/>
+
+      <h4 class="subtitle">Redesigned Attention Mechanism</h4>
+      <p>
+        The attention pattern is restructured into a multi-level hierarchy. Information is exchanged only between tokens at the same level (siblings) and between parent and child tokens. This method maintains sparsity, significantly enhancing computational and memory efficiency.
+          </p>
     </div>
   </div>
+</section>
+
+
+<section class="section", id="sparse_kernel">
+  <div class="container is-max-desktop">
+    <div class="content is-medium">
+        <h2 class="title">Sparse Attention Kernel</h2>
+          <p>
+        A key innovation of HDT is the development of a novel sparse attention kernel based on the <a href="https://triton-lang.org/main/index.html">Triton</a> library. This kernel efficiently handles the sample-dependent hierarchical attention patterns unique to each document structure.
+          </p>
+      <img src="static/images/attn_diff.png" alt="First Image">
+      <p>
+        (<em>Left</em>) The Longformer sparse attention pattern is identical for all samples in a mini-batch. <br> (<em>Right</em>) Our proposed dynamic hierarchical attention pattern considers the document structure and therefore is different for each sample in a mini-batch.
+      </p>
+
+      <h4 class="subtitle">Implementation</h4>
+      <p>Following <a href="https://arxiv.org/abs/2205.14135">FlashAttention</a>, we copy queries, keys and values block-wise to SRAM for fast attention computation using a fused kernel.
+        To maximize the number of empty blocks that can be skipped, we leverage a simple heuristic which is illustrated with an example in the following figure.</p>
+      <img src="static/images/attn_implementation.png" alt="First Image">
+      <p>Specifically, before copying keys and values to SRAM, we first sort them based on their hierarchy level while keeping the order of the queries unchanged. This ensures adjacency of the most related tokens and hence increases the probability of large empty blocks that can be skipped. Afterwards, we copy the queries, keys and values to SRAM and apply block attention. We process all non-empty blocks in parallel, skipping empty ones.</p>
+      <h4 class="subtitle"> Attention Pattern (Black) and Processed SRAM Blocks (Grey) </h4>
+      <span style="white-space:nowrap"><img src="static/images/flash_attn_kernel.jpg" width="49%"></span>
+      <span style="white-space:nowrap"><img src="static/images/hdt_kernel.jpg" width="49%"></span>
+      <p>We compare practical computation of Block-Sparse FlashAttention (<em>Left</em>) and our HDT attention kernel (<em>Right</em>) on the same hierarchical attention patterns. We show the attention mask of the first 1k tokens (~25% of the total document size) of two different documents (row 1+2) in black. The blue grids illustrate the 128 x 64 SRAM blocks which are processed in parallel using the fused kernel.
+All blocks highlighted in grey contain at least one non-zero attention entry and hence require processing. Due to the reordering of keys and values (columns) in HDT, anchor tokens are aggregated within adjacent blocks leading to a larger number of blocks that can be skipped compared to Block-Sparse FlashAttention.</p>
+    </div>
+  </div>
+</section>
+
+  <section class="section", id="results">
+  <div class="container is-max-desktop">
+    <div class="content is-medium">
+        <h2 class="title">Experiments</h2>
+          <p>
+            We first verify the utility of structure-aware attention patterns on a simple mathematical task -> ListOps. Next, we evaluate our pre-trained encoder-only model on SciRepEval proximity tasks. We also investigate the expressiveness of the anchor token representations using our pre-trained encoder-decoder model on the FacetSum summarization tasks and SCROLLS benchmark. Results on SCROLLS below demonstrate that our model can even be applied to long texts which are not explicitly structured. Please find the results of ListOps, SciRepEval, and FacetSum in our paper.
+          </p>
+      <table><caption><em>We compare HDT encoder decoder to Longformer-Encoder-Decoder (LED) on the official SCROLLS benchmark which contains documents <b>without document structure</b>. We choose LED as baseline as it has a comparable number of parameters (162M) to HDT-ED (124M). We remark that neither model is competitive with state-of-the-art billion-parameter models such as CoLT5 XL (score 43.5) which are trained on large GPU clusters.</em></caption><thead><tr><th>Model</th><th>GovRep</th><th>SumScr</th><th>QMSum</th><th>Qspr</th><th>Nrtv</th><th>QALT</th><th>CNLI</th><th>Avg</th></tr></thead><tbody><tr><th></th><td>ROUGE-1/2/L</td><td>ROUGE-1/2/L</td><td>ROUGE-1/2/L</td><td>F1</td><td>F1</td><td>EM-T/H</td><td>EM</td><td>Score</td></tr><tr><th>LED</th><td><b>56.2</b>/<b>26.6</b>/<b>28.8</b></td><td>24.2/4.5/15.4</td><td>25.1/<b>6.7</b>/<b>18.8</b></td><td>26.6</td><td><b>18.5</b></td><td>25.8/25.4</td><td>71.5</td><td>29.2</td></tr><tr><th>HDT (ours)</th><td>49.8/22.2/25.8</td><td><b>30.8</b>/<b>7.1</b>/<b>18.6</b></td><td><b>28.3</b>/<b>6.7</b>/18.7</td><td><b>33.1</b></td><td>14.2</td><td><b>29.4</b>/<b>26.4</b></td><td><b>81.4</b></td><td><b>31.4</b></td></tr></tbody></table>
+      <h4 class="subtitle"> Efficiency Analysis </h4>
+      <p>Denote the length (number of tokens) of the longest sentence in a document as \(s\) and the input length as \(n\), the theoretical complexity of HDT attention is \(O(n \times s)\). Therefore, longer inputs bring larger computational savings because \(s \ll n\). This advantage makes it possible for us to <b>pre-train</b> our model on <b>1 GPU in one day</b> with input length 8,192 that is even longer than most of the LLMs pre-training setting. </p>
+      <p>Below in the left figure we compare GPU runtime and memory usage of different attention layers, including standard dense attention, block-sparse FlashAttention (using our hierarchical pattern), Longformer sparse windowed attention, and HDT hierarchical attention. </p>
+      <div class="table_img">
+    <img src="static/images/benchmark_fwd.png" alt="Sample Image">
+    <table style="width:40%; white-space:nowrap"><tr><th>Model</th><td>Longformer</td><td>HAT</td><td>HDT (ours)</td></tr><tr><td><b>Complexity</b></td><td>\(O(n \times w)\)/td><td>\(O(n \times k)\)</td><td>\(O(n \times s)\)</td></tr><tr><td><b>#Params</b></td><td>148.66 M</td><td>152.73 M</td><td><b>108.99 M</b></td></tr><tr><td><b>Time (ms)</b></td><td>178.82\(_{\pm 6.84}\)</td><td><b>77.84</b> \(_{\pm 2.30}\)</td><td>79.8 \(_{\pm 2.96}\)</td></tr><tr><td><b>TFLOPS</b></td><td>5.29 \(_{\pm 0.19}\)</td><td>8.95 \(_{\pm 0.26}\)</td><td><b>8.99</b> \(_{\pm 0.34}\)</td></tr><tr><td><b>Memory</b></td><td>11.25 GB</td><td><b>5.3 GB</b></td><td>5.85 GB</td></tr><tr><td></tr></table>
 </div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
+      <p>The right table above reports runtime and memory consumption of several long-document models with 12 Transformer-based layers. We report complexity, parameters, inference time, throughput, and memory usage using context length \(n=4096\) and mini-batch size 1. Here, \(w=512\) is the Longformer window size, \(k=128\) is the fixed HAT segment length. \(s\) is the length of the longest sentence in the document. Usually, \(s \ll k\).</p>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@misc{he2024hdthierarchicaldocumenttransformer,
+      title={HDT: Hierarchical Document Transformer},
+      author={Haoyu He and Markus Flicke and Jan Buchmann and Iryna Gurevych and Andreas Geiger},
+      year={2024},
+      eprint={2407.08330},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2407.08330},
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -292,7 +260,7 @@
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
