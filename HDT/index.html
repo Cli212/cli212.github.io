@@ -4,23 +4,23 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta name="description" content="HDT builds a compute efficient Transformer using hierarchical sparse attention">
+  <meta property="og:title" content="HDT: Hierarchical Document Transformer"/>
+  <meta property="og:description" content="A compute efficient Transformer using hierarchical sparse attention; pre-training a language model with 8192 input length on 1 GPU in one day"/>
+  <meta property="og:url" content="https://cli212.github.io/HDT/"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image" content="static/images/model_architecture.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <meta name="twitter:title" content="HDT: Hierarchical Document Transformer">
+  <meta name="twitter:description" content="A compute efficient Transformer using hierarchical sparse attention; pre-training a language model with 8192 input length on 1 GPU in one day">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:image" content="static/images/model_architecture.png">
   <meta name="twitter:card" content="summary_large_image">
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="compute & memory efficient Transformer; sparse attention; encoder-only; encoder-decoder; long-text Transformer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -53,9 +53,9 @@
         onload="renderMathInElement(document.body);"></script>
   <style>
         .table_img { display: flex; }
-        .table_img img { max-width: 40%; margin-right: 20px; }
+        .table_img img { max-width: 40%; margin-right: 10px; }
         .table_img table { border-collapse: collapse; }
-        .table_img th, .specific-container td { border: 1px solid black; padding: 8px; }
+        .table_img th, .specific-container td { border: 1px solid black; padding: 10px; }
     </style>
 </head>
 <body>
@@ -86,23 +86,22 @@
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block"><sup>1</sup>University of Tübingen, <sup>2</sup>Tübingen AI Center<br>
-                      <sup>3</sup>Technical University of Darmstadt and Hessian Center for AI (hessian.AI)<br>CONFERENCE ON LANGUAGE MODELING' 2024</span>
+                      <sup>3</sup>Technical University of Darmstadt and Hessian Center for AI (hessian.AI)<br>Conference on Language Modeling (COLM) 2024</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-
-                      <span class="link-block">
-                        <a href="https://www.scholar-inbox.com/papers/He2024ARXIV_HDT_Hierarchical_Document_Transformer.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <img class="icon-img data-img-icon" src="https://www.scholar-inbox.com/image/scholar_inbox_nobackground.png"/>
-                        </span>
-                        <span>Scholar Inbox</span>
-                      </a>
-                    </span>
-
+          <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2407.08330" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
                   <!-- Github link -->
                   <span class="link-block">
                     <a href="https://github.com/autonomousvision/hdt" target="_blank"
@@ -113,16 +112,16 @@
                     <span>Code</span>
                   </a>
                 </span>
-                      <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2407.08330" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+                                            <span class="link-block">
+                        <a href="https://huggingface.co/collections/howey/hdt-6693a6969c97af5987d803a7" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" width="18" height="18"/>
+                        </span>
+                        <span>Huggingface</span>
+                      </a>
+                    </span>
+
             </div>
           </div>
         </div>
@@ -139,7 +138,7 @@
         <!-- Your image here -->
         <img src="static/images/head_img.png" alt="First Image">
 
-      <h4 class="subtitle has-text-centered">
+      <h4 class="subtitle has-text-justified">
         (<em>Left</em>) We propose a sparse attention pattern that considers the hierarchical structure of documents. Here, regular tokens are illustrated in green, and auxiliary anchor tokens in yellow (document),
 red (section) and blue (sentence). Each token attends to its parent, siblings and children. Cross-level
 attention is illustrated using color gradients in the attention matrix. <br> (<em>Right</em>) Utilizing structural information
@@ -157,7 +156,7 @@ present in documents leads to faster pre-training.
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
+          <p style="font-size: 20px">
             In this paper, we propose the Hierarchical Document Transformer (HDT), a novel sparse Transformer architecture tailored for structured hierarchical documents. Such documents are extremely important in numerous domains, including science, law or medicine. However, most existing solutions are inefficient and fail to make use of the structure inherent to documents. HDT exploits document structure by introducing auxiliary anchor tokens and redesigning the attention mechanism into a sparse multi-level hierarchy. This approach facilitates information exchange between tokens at different levels while maintaining sparsity, thereby enhancing computational and memory efficiency while exploiting the document structure as an inductive bias. We address the technical challenge of implementing HDT's sample-dependent hierarchical attention pattern by developing a novel sparse attention kernel that considers the hierarchical structure of documents. As demonstrated by our experiments, utilizing structural information present in documents leads to faster convergence, higher sample efficiency and better performance on downstream tasks.
           </p>
         </div>
@@ -168,7 +167,7 @@ present in documents leads to faster pre-training.
 <!-- End paper abstract -->
 
 
-<section class="section", id="method">
+<section class="section", id="method" style="padding-top: 20px; padding-bottom: 0px">
   <div class="container is-max-desktop">
     <div class="content is-medium">
         <h2 class="title">Efficient Transformer Leverages Document Structures</h2>
@@ -187,7 +186,7 @@ More specifically, for the document hierarchy introduced above, we prepend addit
 </section>
 
 
-<section class="section", id="sparse_kernel">
+<section class="section", id="sparse_kernel" style="padding-top: 20px; padding-bottom: 0px">
   <div class="container is-max-desktop">
     <div class="content is-medium">
         <h2 class="title">Sparse Attention Kernel</h2>
@@ -213,14 +212,14 @@ All blocks highlighted in grey contain at least one non-zero attention entry and
   </div>
 </section>
 
-  <section class="section", id="results">
+  <section class="section", id="results" style="padding-top: 20px; padding-bottom: 0px">
   <div class="container is-max-desktop">
     <div class="content is-medium">
         <h2 class="title">Experiments</h2>
           <p>
             We first verify the utility of structure-aware attention patterns on a simple mathematical task -> ListOps. Next, we evaluate our pre-trained encoder-only model on SciRepEval proximity tasks. We also investigate the expressiveness of the anchor token representations using our pre-trained encoder-decoder model on the FacetSum summarization tasks and SCROLLS benchmark. Results on SCROLLS below demonstrate that our model can even be applied to long texts which are not explicitly structured. Please find the results of ListOps, SciRepEval, and FacetSum in our paper.
           </p>
-      <table><caption><em>We compare HDT encoder decoder to Longformer-Encoder-Decoder (LED) on the official SCROLLS benchmark which contains documents <b>without document structure</b>. We choose LED as baseline as it has a comparable number of parameters (162M) to HDT-ED (124M). We remark that neither model is competitive with state-of-the-art billion-parameter models such as CoLT5 XL (score 43.5) which are trained on large GPU clusters.</em></caption><thead><tr><th>Model</th><th>GovRep</th><th>SumScr</th><th>QMSum</th><th>Qspr</th><th>Nrtv</th><th>QALT</th><th>CNLI</th><th>Avg</th></tr></thead><tbody><tr><th></th><td>ROUGE-1/2/L</td><td>ROUGE-1/2/L</td><td>ROUGE-1/2/L</td><td>F1</td><td>F1</td><td>EM-T/H</td><td>EM</td><td>Score</td></tr><tr><th>LED</th><td><b>56.2</b>/<b>26.6</b>/<b>28.8</b></td><td>24.2/4.5/15.4</td><td>25.1/<b>6.7</b>/<b>18.8</b></td><td>26.6</td><td><b>18.5</b></td><td>25.8/25.4</td><td>71.5</td><td>29.2</td></tr><tr><th>HDT (ours)</th><td>49.8/22.2/25.8</td><td><b>30.8</b>/<b>7.1</b>/<b>18.6</b></td><td><b>28.3</b>/<b>6.7</b>/18.7</td><td><b>33.1</b></td><td>14.2</td><td><b>29.4</b>/<b>26.4</b></td><td><b>81.4</b></td><td><b>31.4</b></td></tr></tbody></table>
+      <table><caption class="subtitle has-text-justified"><em>We compare HDT encoder decoder to Longformer-Encoder-Decoder (LED) on the official SCROLLS benchmark which contains documents <b>without document structure</b>. We choose LED as baseline as it has a comparable number of parameters (162M) to HDT-ED (124M). We remark that neither model is competitive with state-of-the-art billion-parameter models such as CoLT5 XL (score 43.5) which are trained on large GPU clusters.</em></caption><thead><tr><th>Model</th><th>GovRep</th><th>SumScr</th><th>QMSum</th><th>Qspr</th><th>Nrtv</th><th>QALT</th><th>CNLI</th><th>Avg</th></tr></thead><tbody><tr><th></th><td>ROUGE-1/2/L</td><td>ROUGE-1/2/L</td><td>ROUGE-1/2/L</td><td>F1</td><td>F1</td><td>EM-T/H</td><td>EM</td><td>Score</td></tr><tr><th>LED</th><td><b>56.2</b>/<b>26.6</b>/<b>28.8</b></td><td>24.2/4.5/15.4</td><td>25.1/<b>6.7</b>/<b>18.8</b></td><td>26.6</td><td><b>18.5</b></td><td>25.8/25.4</td><td>71.5</td><td>29.2</td></tr><tr><th>HDT (ours)</th><td>49.8/22.2/25.8</td><td><b>30.8</b>/<b>7.1</b>/<b>18.6</b></td><td><b>28.3</b>/<b>6.7</b>/18.7</td><td><b>33.1</b></td><td>14.2</td><td><b>29.4</b>/<b>26.4</b></td><td><b>81.4</b></td><td><b>31.4</b></td></tr></tbody></table>
       <h4 class="subtitle"> Efficiency Analysis </h4>
       <p>Denote the length (number of tokens) of the longest sentence in a document as \(s\) and the input length as \(n\), the theoretical complexity of HDT attention is \(O(n \times s)\). Therefore, longer inputs bring larger computational savings because \(s \ll n\). This advantage makes it possible for us to <b>pre-train</b> our model on <b>1 GPU in one day</b> with input length 8,192 that is even longer than most of the LLMs pre-training setting. </p>
       <p>Below in the left figure we compare GPU runtime and memory usage of different attention layers, including standard dense attention, block-sparse FlashAttention (using our hierarchical pattern), Longformer sparse windowed attention, and HDT hierarchical attention. </p>
@@ -235,19 +234,17 @@ All blocks highlighted in grey contain at least one non-zero attention entry and
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
+  <section class="section" id="BibTeX" style="padding-top: 20px; padding-bottom: 0px">
+    <div class="container is-max-desktop">
+    <div class="container is-medium">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@misc{he2024hdthierarchicaldocumenttransformer,
+      <pre><code>@inproceedings{He2024COLM,
       title={HDT: Hierarchical Document Transformer},
       author={Haoyu He and Markus Flicke and Jan Buchmann and Iryna Gurevych and Andreas Geiger},
       year={2024},
-      eprint={2407.08330},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2407.08330},
+      booktitle={Conference on Language Modeling}
 }</code></pre>
-    </div>
+    </div></div>
 </section>
 <!--End BibTex citation -->
 
