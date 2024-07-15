@@ -20,6 +20,6 @@ I am a second-year PhD student at [Autonomous Vision Group](https://uni-tuebinge
 
 In addition to my work in language modeling, I am also passionate about multi-modal learning. Because I believe every image is a solution to the physical laws, therefore only through integrating multiple modalities—such as text and images—can we build truly comprehensive world model.
 
-My goal is to contribute to the development of technologies that seamlessly integrate different modalities of data to better understand and interact with the universe.
+My vision for AI is to free humans to fully experience and enjoy the process of life. Naturally, there are many obstacles along the way... 
 
 
