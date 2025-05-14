@@ -70,7 +70,14 @@
         </head>
         <body>
             <div class="container">
-                <h1>Diffusion Model Response Visualization</h1>
+              <div class="color-legend">
+                  <h3>Confidence Score Legend</h3>
+                  <div class="legend-gradient"></div>
+                  <div class="legend-labels">
+                      <span>Low Confidence (0.0)</span>
+                      <span>High Confidence (1.0)</span>
+                  </div>
+              </div>
 
                 <div class="controls">
                     <button id="prev-btn">&lt; Prev</button>
@@ -80,15 +87,6 @@
                 </div>
 
                 <div class="response-container" id="response-container"></div>
-
-                <div class="color-legend">
-                    <h3>Confidence Score Legend</h3>
-                    <div class="legend-gradient"></div>
-                    <div class="legend-labels">
-                        <span>Low Confidence (0.0)</span>
-                        <span>High Confidence (1.0)</span>
-                    </div>
-                </div>
             </div>
 
             <script>
@@ -175,4 +173,3 @@
             </script>
         </body>
         </html>
-        
