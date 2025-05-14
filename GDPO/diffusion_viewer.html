@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diffusion Viewer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      max-width: 800px;
+    }
+    .controls {
+      margin-bottom: 1em;
+    }
+    input, select, button {
+      font-size: 1rem;
+      padding: 0.5em;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose a Model to View</h1>
+  <div class="controls">
+    <label for="model-id">Model ID:</label>
+    <select id="model-id">
+      <option value="">-- select --</option>
+      <option value="64_id93">LLaDA-64st-ID93</option>
+      <!-- add more as you spin up new demos -->
+    </select>
+    <button id="load-btn">Load Demo</button>
+  </div>
+
+  <iframe id="demo-frame" sandbox="allow-scripts allow-same-origin" srcdoc="<p>Pick a model above and press Load.</p>"></iframe>
+
+  <script>
+    // map your IDs to the actual URLs where your HTML lives
+    const demoMap = {
+      '64_id93': 'https://cli212.github.io/GDPO/LLaDA-8B-Instruct_64_512_0_thread_filtering_True.html',
+      // …etc…
+    };
+
+    document.getElementById('load-btn').addEventListener('click', () => {
+      const id = document.getElementById('model-id').value;
+      const url = demoMap[id];
+      if (!url) {
+        alert('Please select a valid model ID');
+        return;
+      }
+      // switch the iframe to point at your real HTML
+      document.getElementById('demo-frame').src = url;
+    });
+  </script>
+</body>
+</html>
