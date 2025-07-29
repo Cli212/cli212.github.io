@@ -16,14 +16,15 @@ news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
-I am a third-year PhD student in the [Autonomous Vision Group (AVG)](https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/home/) supervised by [Prof. Andreas Geiger](https://www.cvlibs.net/) at Univeristy of Tübingen and Tübingen AI Center. 
+Hi! I am a third-year PhD student in the [Autonomous Vision Group (AVG)](https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/home/) supervised by [Prof. Andreas Geiger](https://www.cvlibs.net/) at Univeristy of Tübingen and Tübingen AI Center.
 
-My research interest originates with language modeling, driven by a deep curiosity in understanding how machines can learn to interact with human. My current research focuses on pushing the shift from traditional Transformer-based models under the 'linearization assumption (everything in the inputs is flattened)' to models that can use ubiquitous hierarchies effectively.
+My research interests are generally driven by my research vision - to build computationally efficient intelligent agents that liberate human labor. Currently, I am doing research on diffusion language models motivated by my reflections on current LLMs: (1) the redundant long reasoning process of current LLMs could be caused by the noise accumulation of autoregressive generation, (2) memory-bound Diffusion LMs have the potential to be much faster on inference than compute-bound autoregressive models given sufficient GPUs. Therefore, let's make diffusion language models great! 
 
-I am also interested in multimodal modeling, and I draw a lot of sustenance from our exceptional CV group. I feel that though current LLMs are powerful at retrieving knowledge, they are far from an autonomous agent, partially because the lack of understanding laws (e.g., Physics) of how the world operates, which other modalities (e.g., images) can be complementary.     
+Besides, I am also interested in shifting the paradigm under the 'linearization assumption (everything in the inputs is flattened)' to models that can use ubiquitous hierarchies effectively. For example, concept models, hierarchical models...
 
-My ~~vision~~ naive dream for AI is to free humans to fully create and experience the way of life. Naturally, there are many obstacles along the way...
+My life is somehow sports-centric. I am a crazy enthusiast in cycling 🚴🚵. I play tennis 🎾 and ski ⛷️ as well. 
 
 My CV is [here](./assets/pdf/Haoyu_CV_Research.pdf)
+
 
 
