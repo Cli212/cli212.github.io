@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diffusion Demo Loader</title>
+  <style>
+    /* 1) Base (light) theme */
+    :root {
+      --bg: #fff;
+      --fg: #111;
+      --border: #ccc;
+      --note: #666;
+      --control-bg: #f5f5f5;
+      --control-fg: #111;
+    }
+
+    /* 2) Dark theme overrides */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --fg: #eee;
+        --border: #333;
+        --note: #aaa;
+        --control-bg: #1e1e1e;
+        --control-fg: #eee;
+      }
+    }
+
+    /* 3) Apply variables */
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 20px auto;
+      max-width: 1000px;
+      line-height: 1.4;
+    }
+    label, select, input, button {
+      font-size: 1rem;
+      margin: 0.5em 0;
+      color: var(--control-fg);
+    }
+    select, input {
+      width: 100%;
+      padding: 0.5em;
+      box-sizing: border-box;
+      background-color: var(--control-bg);
+      border: 1px solid var(--border);
+    }
+    button {
+      padding: 0.5em 1em;
+      cursor: pointer;
+      background-color: var(--control-bg);
+      border: 1px solid var(--border);
+    }
+    .note {
+      color: var(--note);
+      font-size: 0.9rem;
+    }
+    #demo-frame {
+      display: none;
+      width: 100%;
+      height: 600px;
+      border: 1px solid var(--border);
+      margin-top: 1em;
+      background-color: var(--bg);
+    }
+  </style>
+</head>
+<body>
+  <h1>Evolution of LLaDA predictions over diffusion steps</h1>
+  <p class="note">
+    Pick one from the pre-defined model IDs. The predicted tokens for all positions are colored with the model confidence score of current step.
+  </p>
+
+  <iframe
+    id="demo-frame"
+    sandbox="allow-scripts allow-same-origin"
+    src=""
+  >
+    Sorry, we couldn’t load the demo. Check your browser console for details.
+  </iframe>
+  <!-- Dropdown for predefined IDs -->
+  <label for="model-select">Choose a Model:</label>
+  <select id="model-select">
+    <option value="">— select an ID —</option>
+    <option value="64_512_number_theory_255">LLaDA-64st-ID255</option>
+    <!-- add more options here as needed -->
+  </select>
+
+  <button id="load-btn">Load Demo</button>
+  <script>
+    // Map of short IDs → hosted demo URLs
+    const demoMap = {
+      '64_512_number_theory_255': './LLaDA-8B-Instruct_prompt_step_by_step_linear_64_512_test_number_theory_255_overtime_conf_False_continue_rephrase_False.html',
+      // …extend as you add more demos…
+    };
+
+    document.getElementById('load-btn').addEventListener('click', () => {
+      const select = document.getElementById('model-select');
+      let url = '';
+
+      // Priority 1: if a dropdown option is chosen, use its mapped URL
+      if (select.value && demoMap[select.value]) {
+        url = demoMap[select.value];
+      }
+
+      if (!url) {
+        return alert(
+          '❌ Please either select a model ID from the dropdown or enter a valid HTTPS URL.'
+        );
+      }
+
+      const iframe = document.getElementById('demo-frame');
+      iframe.removeAttribute('srcdoc');
+      iframe.src = url;
+      iframe.style.display = 'block';
+    });
+
+    // Optional: clear URL input when selecting from dropdown
+    document.getElementById('model-select').addEventListener('change', () => {
+      document.getElementById('url-input').value = '';
+    });
+  </script>
+</body>
+</html>
