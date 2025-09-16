@@ -16,7 +16,7 @@ news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
-Hi! I am a third-year PhD student in the [Autonomous Vision Group (AVG)](https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/home/) supervised by [Prof. Andreas Geiger](https://www.cvlibs.net/) at Univeristy of Tübingen and Tübingen AI Center.
+Hi! I am a third-year PhD student in Language Modeling at the Univeristy of Tübingen and Tübingen AI Center. I am fortunate to be in the [Autonomous Vision Group (AVG)](https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/home/) led by [Prof. Andreas Geiger](https://www.cvlibs.net/). 
 
 My research interests are generally driven by my research vision - to build computationally efficient intelligent agents that liberate human labor. Currently, I am doing research on diffusion language models motivated by my reflections on current LLMs: (1) the redundant long reasoning process of current LLMs could be caused by the noise accumulation of autoregressive generation, (2) memory-bound Diffusion LMs have the potential to be much faster on inference than compute-bound autoregressive models given sufficient GPUs. Therefore, let's make diffusion language models great! 
 
